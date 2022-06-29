@@ -99,7 +99,7 @@ class Ui_MainWindow(object):
                                              "Во врем теста не трогайте мышью и клавиатуру."
                                              "</span></p></body></html>"))
 
-    # промежуточные функции, чтобы передать какую кнопку нажали
+    # промежуточные функции, чтобы передать - тестирование какого продукта выбрано
     def on_click_glag(self):
         self.on_click(1)
     def on_click_ved(self):
@@ -118,56 +118,39 @@ class Ui_MainWindow(object):
         if prod == 1:           # перечень всех тестов, как все заработает, вынесу в меню
             print("glagol")
             test_glag = glagol.TestGlagol()
-#
-#        test_glag.file(dirs)  # меню Файл
-#        test_glag.maj_clipboard(dirs)  # меню Главная Буфер обмена
-#            test_glag.maj_font(dirs)  # меню Главная шрифт
-#        test_glag.maj_font_reg(dirs)  # меню Главная регистр
-#        test_glag.maj_style(dirs)  # меню Главная стиль
-#        test_glag.maj_format(dirs)  # меню Главная формат
+
+            test_glag.file(dirs)  # меню Файл
+            test_glag.maj_clipboard(dirs)  # меню Главная Буфер обмена
+            test_glag.maj_font(dirs)  # меню Главная шрифт
+            test_glag.maj_font_reg(dirs)  # меню Главная регистр
+            test_glag.maj_style(dirs)  # меню Главная стиль
+            test_glag.maj_format(dirs)  # меню Главная формат
             test_glag.maj_serch(dirs)  # меню Главная поиск
-#        test_glag.page_markup_fields(dirs)  # меню Разметка страницы Поля
-#        test_glag.page_markup_orientation(dirs)  # меню Разметка страницы ориентация
-#        test_glag.page_markup_size(dirs)  # меню Разметка размер страницы
-#        test_glag.insert_image(dirs)  # меню Вставка разрыв, изображение
-#        test_glag.insert_tabe(dirs)  # меню Вставка таблииы
-#        test_glag.insert_colont(dirs)  # меню Вставка ссылка, колонтитулы, оглавление
-#        test_glag.reviewing(dirs)  # меню Рецензирование
+            test_glag.page_markup_fields(dirs)  # меню Разметка страницы Поля
+            test_glag.page_markup_orientation(dirs)  # меню Разметка страницы ориентация
+            test_glag.page_markup_size(dirs)  # меню Разметка размер страницы
+            test_glag.insert_image(dirs)  # меню Вставка разрыв, изображение
+            test_glag.insert_tabe(dirs)  # меню Вставка таблииы
+            test_glag.insert_colont(dirs)  # меню Вставка ссылка, колонтитулы, оглавление
+            test_glag.reviewing(dirs)  # меню Рецензирование
 
 # Все тесты Ведомости
         if prod == 2:
             print("vedomost")
             test_ved = vedomost.TestVedomost()
 
-    #        test_ved.file(dirs)
-    #        test_ved.maj_font(dirs)
-    #        test_ved.maj_alignment(dirs)
-    #        test_ved.maj_serch(dirs)
-    #        test_ved.maj_number(dirs)
-    #        test_ved.maj_sort(dirs)
-    #        test_ved.insert_img(dirs)
+            test_ved.file(dirs)
+            test_ved.maj_font(dirs)
+            test_ved.maj_alignment(dirs)
+            test_ved.maj_serch(dirs)
+            test_ved.maj_number(dirs)
+            test_ved.maj_sort(dirs)
+            test_ved.insert_img(dirs)
             test_ved.insert_diogramm(dirs)
 
 # Все тесты Доклада
         if prod == 3:
             print("doclad")
-
-
-'''
-    def on_click_ved(self):  # # По нажатию на кнопку создает папку и прогоняет тесты Ведомости
-
-        name = self.lineEdit_name.text()
-        dirs = os.path.join(name)
-        if not os.path.isdir(dirs):
-            os.makedirs(dirs)
-
-    def on_click_doc(self):  # По нажатию на кнопку передает название папки для сохранения результатов
-
-        name = str(self.lineEdit_name.text())
-        print(name)
- #       self.test_gr = main.Gramota.start(name)
-
-'''
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
